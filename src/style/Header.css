@@ -1,0 +1,32 @@
+.header {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    max-height: 50px;
+    margin-left: 10px;
+    justify-content: space-between;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.header_logo {
+    height: 100px;
+    width: 100%;
+    object-fit: contain;
+}
+
+.header_title {
+    font-size: 30px;
+    font-family: "calibri";
+    padding: 5px;
+    margin-left: 10px;
+    text-align: center;
+    color: #d70040;
+}
+
+.header_dropdown {
+    width: 200px;
+    border-radius: 5px;
+    background-color: white;
+    align-self: center;
+}

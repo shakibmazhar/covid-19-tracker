@@ -1,0 +1,87 @@
+.globalUpdate {
+    display: flex;
+    flex-direction: column;
+    font-family: "Calibri";
+}
+
+.global_bar {
+    height: 4px;
+    border-radius: 8px;
+    background-color: #d70040;
+}
+
+.global_bar_green {
+    height: 4px;
+    border-radius: 8px;
+    background-color: #7cfc00;
+}
+
+.global_title {
+    color: white;
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.global_info {
+    display: flex;
+    color: white;
+    text-align: left;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    justify-content: space-evenly;
+}
+
+.global_cases,
+.global_deaths {
+    margin-right: 10px;
+}
+
+.global_stats {
+    color: #d70040;
+    text-align: right;
+    padding: 5px;
+}
+
+.global_stats_green {
+    color: #7cfc00;
+    text-align: right;
+    padding: 5px;
+}
+
+.global_cases,
+.global_deaths,
+.global_recovered {
+    background-color: #111;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.global_cases > p,
+.global_deaths > p,
+.global_recovered > p {
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.global_label {
+    padding: 5px;
+    font-size: 22px;
+    text-align: center;
+}
+
+.global_cases > h4,
+.global_deaths > h4 {
+    padding: 10px;
+    font-size: 20px;
+    color: #d70040;
+}
+
+.global_recovered > h4 {
+    padding: 10px;
+    font-size: 20px;
+    color: #7cfc00;
+}

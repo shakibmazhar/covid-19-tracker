@@ -1,0 +1,157 @@
+.infobox {
+    align-items: center;
+    background-color: #222;
+    color: white;
+    font-family: "Calibri";
+    border-radius: 8px;
+    padding-bottom: 10px;
+}
+
+.infobox_style {
+    height: 4px;
+    border-radius: 8px;
+    background-color: #d70040;
+}
+
+.infobox_country {
+    text-align: center;
+    font-size: 30px;
+}
+
+.infobox_flag {
+    align-self: center;
+    height: 30px;
+    width: 100%;
+    object-fit: contain;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.infobox_continent {
+    text-align: center;
+    font-size: 20px;
+}
+
+.infobox_info {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    justify-content: space-evenly;
+}
+
+.new_cases {
+    background-color: #111;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 8px;
+}
+
+.new_cases_style {
+    height: 4px;
+    border-radius: 8px;
+    background: #d70040;
+}
+
+.new_cases > h4 {
+    color: #d70040;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.new_cases > h3 {
+    padding: 10px;
+    font-size: 22px;
+    text-align: center;
+}
+
+.new_deaths {
+    background-color: #111;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 8px;
+}
+
+.new_deaths_style {
+    height: 4px;
+    border-radius: 8px;
+    background: #d70040;
+}
+
+.new_deaths > h4 {
+    color: #d70040;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.new_deaths > h3 {
+    padding: 10px;
+    font-size: 22px;
+    text-align: center;
+}
+
+.new_recoveries {
+    background-color: #111;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 8px;
+}
+
+.new_recoveries_style {
+    height: 4px;
+    border-radius: 8px;
+    background: #7cfc00;
+}
+
+.new_recoveries > h4 {
+    color: #7cfc00;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.new_recoveries > h3 {
+    padding: 10px;
+    font-size: 22px;
+    text-align: center;
+}
+
+.new_cases > p,
+.new_deaths > p,
+.new_recoveries > p {
+    font-size: 18;
+    font-weight: 800;
+    padding: 10px;
+}
+
+.total {
+    background-color: #111;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 8px;
+}
+
+.total > h2 {
+    padding: 10px;
+    font-size: 22px;
+    text-align: center;
+}
+
+.total_stats {
+    padding: 10px;
+    font-size: 20px;
+}
+
+.total_red {
+    color: #d70040;
+}
+
+.total_green {
+    color: #7cfc00;
+}
+
+@media (max-width: 990px) {
+    .infobox {
+        width: 100%;
+    }
+}

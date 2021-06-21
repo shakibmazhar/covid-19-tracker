@@ -1,0 +1,29 @@
+.error {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.error_msg {
+    color: white;
+    text-align: center;
+    font-family: "Calibri";
+    font-size: 40px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.error_btn {
+    cursor: pointer;
+    background-color: #d70040;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    transition: transform 450ms;
+}
+
+.error_btn:hover {
+    transform: scale(1.05);
+}
