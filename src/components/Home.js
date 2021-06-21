@@ -12,35 +12,37 @@ export const Home = () => {
     const { mapPosition, dispatch } = useAppContext();
     const [casesType, setCasesType] = useState();
 
+    // Api call for daily global updates
+    const fetchDaily = async () => {
+        await axios.get("/all").then((response) => {
+            console.log(response);
+            dispatch({
+                type: "SET_DAILY",
+                payload: response.data,
+            });
+        });
+    };
+
+    // Api call for fetching countries
+    const fetchCountries = async () => {
+        await axios.get("/countries").then((response) => {
+            // console.log(response.data);
+            const country = response.data.map((item) => ({
+                name: item.country,
+                value: item.countryInfo.iso3,
+            }));
+            dispatch({
+                type: "SET_COUNTRIES",
+                payload: country,
+            });
+            dispatch({
+                type: "SET_MOTHERLOAD",
+                payload: response.data,
+            });
+        });
+    };
+
     useEffect(() => {
-        // Api call for daily global updates
-        const fetchDaily = async () => {
-            await axios.get("/all").then((response) => {
-                // console.log(response);
-                dispatch({
-                    type: "SET_DAILY",
-                    payload: response.data,
-                });
-            });
-        };
-        // Api call for fetching countries
-        const fetchCountries = async () => {
-            await axios.get("/countries").then((response) => {
-                // console.log(response.data);
-                const country = response.data.map((item) => ({
-                    name: item.country,
-                    value: item.countryInfo.iso3,
-                }));
-                dispatch({
-                    type: "SET_COUNTRIES",
-                    payload: country,
-                });
-                dispatch({
-                    type: "SET_MOTHERLOAD",
-                    payload: response.data,
-                });
-            });
-        };
         // Initial call on mount
         fetchDaily();
         fetchCountries();
