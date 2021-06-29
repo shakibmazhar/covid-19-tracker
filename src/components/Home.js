@@ -7,10 +7,11 @@ import Map from "./Map";
 import Table from "../components/Table";
 import Linegraph from "./Linegraph";
 import Globalupdate from "./Globalupdate";
+import { capitalize } from "@material-ui/core";
 
 export const Home = () => {
     const { mapPosition, dispatch } = useAppContext();
-    const [casesType, setCasesType] = useState();
+    const [casesType, setCasesType] = useState("cases");
 
     // Api call for daily global updates
     const fetchDaily = async () => {
@@ -78,7 +79,7 @@ export const Home = () => {
                 <div className="home_right_style"></div>
                 <h3>Live Cases by Country</h3>
                 <Table />
-                <h3>Cases History</h3>
+                <h3>{capitalize(casesType)} History</h3>
                 <Linegraph className="home_right_graph" casesType={casesType} />
             </div>
         </div>

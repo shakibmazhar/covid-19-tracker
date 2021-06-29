@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
 import numeral from "numeral";
 import "../style/Linegraph.css";
+import { capitalize } from "@material-ui/core";
 
 // Line graph options
 const options = {
@@ -91,7 +92,7 @@ const Linegraph = ({ casesType = "cases" }) => {
                     data={{
                         datasets: [
                             {
-                                label: casesType.toUpperCase(),
+                                label: capitalize(casesType),
                                 backgroundColor: "#111",
                                 borderColor: "#d70040",
                                 data: data,
