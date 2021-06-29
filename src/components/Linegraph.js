@@ -2,7 +2,7 @@ import axios from "../axios";
 import React, { useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
 import numeral from "numeral";
-import "../style/Linegraph.css";
+import "../index.css";
 import { capitalize } from "@material-ui/core";
 
 // Line graph options
@@ -86,7 +86,7 @@ const Linegraph = ({ casesType = "cases" }) => {
     }, [casesType]);
 
     return (
-        <div className="linegraph">
+        <div className="p-4 w-full h-96">
             {data?.length > 0 && (
                 <Line
                     data={{

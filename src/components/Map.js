@@ -1,7 +1,7 @@
 import React from "react";
 import { MapContainer as LeafletMap, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import "../style/Map.css";
+import "../index.css";
 import { useAppContext } from "../context";
 import mapData from "../mapData";
 

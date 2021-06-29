@@ -1,33 +1,32 @@
 import numeral from "numeral";
 import React from "react";
 import { useAppContext } from "../context";
-import "../style/Globalupdates.css";
+import "../index.css";
 
 const Globalupdate = ({ setCasesType }) => {
     const { daily } = useAppContext();
 
     return (
-        <div className="globalUpdate">
-            {/* Style bar */}
-            <div className="global_bar"></div>
-            <h2 className="global_title">Worldwide Updates</h2>
-            <div className="global_info">
+        <div className="border-t-4 border-red-500 bg-gray-800 rounded-md flex flex-col m-5">
+            <h2 className="text-xl p-4 text-center m-2 text-white font-bold">
+                Worldwide Updates
+            </h2>
+            {/* Updates Container */}
+            <div className="flex">
                 {/* Today's cases */}
                 <div
-                    className="global_cases"
+                    className="bg-gray-700 m-4 rounded-md border-t-2 border-red-500 cursor-pointer"
                     onClick={() => setCasesType("cases")}
                 >
-                    <div className="global_bar"></div>
-                    <h3 className="global_label">Cases Today</h3>
-                    <h4>
-                        +{" "}
-                        <span className="global_stats">
-                            {numeral(daily.todayCases).format("0,0")}
-                        </span>{" "}
+                    <h3 className="text-lg font-semibold text-center p-2 text-white">
+                        Cases <span className="block">Today</span>
+                    </h3>
+                    <h4 className="text-lg font-semibold p-2 text-red-500">
+                        + <span>{numeral(daily.todayCases).format("0,0")}</span>{" "}
                     </h4>
-                    <p>
+                    <p className="p-2 text-white font-bold text-sm">
                         {" "}
-                        <span className="global_stats">
+                        <span className="text-red-500">
                             {numeral(daily.cases).format("0.00a")}
                         </span>{" "}
                         total
@@ -35,20 +34,21 @@ const Globalupdate = ({ setCasesType }) => {
                 </div>
                 {/* Today's deaths */}
                 <div
-                    className="global_deaths"
+                    className="bg-gray-700 m-4 rounded-md border-t-2 border-red-600 cursor-pointer"
                     onClick={() => setCasesType("deaths")}
                 >
-                    <div className="global_bar"></div>
-                    <h3 className="global_label">Deaths Today</h3>
-                    <h4>
+                    <h3 className="text-lg font-semibold text-center p-2 text-white">
+                        Deaths <span className="block">Today</span>
+                    </h3>
+                    <h4 className="text-lg font-semibold p-2 text-red-600">
                         +{" "}
                         <span className="global_stats">
                             {numeral(daily.todayDeaths).format("0,0")}
                         </span>{" "}
                     </h4>
-                    <p>
+                    <p className="p-2 text-white font-bold text-sm">
                         {" "}
-                        <span className="global_stats">
+                        <span className="text-red-600">
                             {numeral(daily.deaths).format("0.00a")}
                         </span>{" "}
                         total
@@ -56,20 +56,21 @@ const Globalupdate = ({ setCasesType }) => {
                 </div>
                 {/* Today's recovered */}
                 <div
-                    className="global_recovered"
+                    className="bg-gray-700 m-4 rounded-md border-t-2 border-green-500 cursor-pointer"
                     onClick={() => setCasesType("recovered")}
                 >
-                    <div className="global_bar_green"></div>
-                    <h3 className="global_label">Recoveries Today</h3>
-                    <h4>
+                    <h3 className="text-lg font-semibold text-center p-2 text-white">
+                        Recoveries <span className="block">Today</span>
+                    </h3>
+                    <h4 className="text-lg font-semibold p-2 text-green-500">
                         +{" "}
-                        <span className="global_stats_green">
+                        <span>
                             {numeral(daily.todayRecovered).format("0,0")}
                         </span>{" "}
                     </h4>
-                    <p>
+                    <p className="p-2 text-white font-bold text-sm">
                         {" "}
-                        <span className="global_stats_green">
+                        <span className="text-green-500">
                             {numeral(daily.recovered).format("0.00a")}
                         </span>{" "}
                         total

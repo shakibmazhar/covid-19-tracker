@@ -2,7 +2,7 @@ import { FormControl, Select, MenuItem } from "@material-ui/core";
 import axios from "../axios";
 import React, { useState, useEffect } from "react";
 import { useAppContext } from "../context";
-import "../style/Header.css";
+import "../index.css";
 
 const Header = () => {
     const { countries, dispatch } = useAppContext();
@@ -39,10 +39,10 @@ const Header = () => {
     }, [selectedCountry]);
 
     return (
-        <div className="header">
-            <h4 className="header_title">COVID-19 Tracker</h4>
+        <div className="bg-black flex items-center justify-between h-20">
+            <h4 className="text-3xl p-2 ml-2 text-red-500">COVID-19 Tracker</h4>
             {/* Drop down menu */}
-            <FormControl className="header_dropdown">
+            <FormControl className="bg-white rounded-md w-40 right-4">
                 <Select
                     variant="outlined"
                     value={selectedCountry}

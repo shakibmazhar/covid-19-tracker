@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "../axios";
 import { useAppContext } from "../context";
-import "../style/Home.css";
+import "../index.css";
 import Infobox from "./Infobox";
 import Map from "./Map";
 import Table from "../components/Table";
@@ -59,28 +59,32 @@ export const Home = () => {
     // console.log(daily);
 
     return (
-        <div className="home">
-            <div className="home_left">
-                <div className="row_one">
-                    <div className="daily_update">
+        <div className="flex flex-col bg-gray-900 lg:flex-row justify-evenly items-center lg:items-start">
+            <div className="flex flex-col">
+                <div className="flex flex-col justify-evenly lg:flex-row">
+                    {/* Global Updates Component */}
+                    <div>
                         <Globalupdate setCasesType={setCasesType} />
                     </div>
-                    {/* Country specific data */}
-                    <div className="country_data">
+                    {/* Country specific data Component */}
+                    <div>
                         <Infobox />
                     </div>
                 </div>
-                <div className="row_two">
+                <div className="flex justify-center">
                     {/* Map Component */}
                     <Map center={mapPosition} casesType={casesType} />
                 </div>
             </div>
-            <div className="home_right">
-                <div className="home_right_style"></div>
-                <h3>Live Cases by Country</h3>
+            <div className="flex flex-col w-96 bg-gray-800 m-5 rounded-md border-t-4 border-red-500 items-center lg:w-4/12">
+                <h3 className="text-center text-lg p-2 font-bold text-white">
+                    Live Cases by Country
+                </h3>
                 <Table />
-                <h3>{capitalize(casesType)} History</h3>
-                <Linegraph className="home_right_graph" casesType={casesType} />
+                <h3 className="text-center text-lg p-2 font-bold text-white mt-2">
+                    {capitalize(casesType)} History
+                </h3>
+                <Linegraph casesType={casesType} />
             </div>
         </div>
     );

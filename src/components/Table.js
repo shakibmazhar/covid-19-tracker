@@ -1,25 +1,27 @@
 import React from "react";
 import { useAppContext } from "../context";
 import numeral from "numeral";
-import "../style/Table.css";
+import "../index.css";
 
 const Table = () => {
     const { motherload } = useAppContext();
     // console.log(motherload);
     return (
-        <div className="table">
+        <div className="table ml-4 mr-4 p-4 rounded-md">
             {motherload.map(({ country, cases, countryInfo }) => (
-                <tr>
+                <tr className="flex items-center justify-between">
                     <td>
                         <img
-                            className="table_flag"
+                            className="w-4"
                             src={countryInfo?.flag}
                             alt="flag"
                         />
                     </td>
-                    <td className="table_country">{country}</td>
+                    <td className="text-md text-white text-center">
+                        {country}
+                    </td>
                     <td>
-                        <strong className="table_stats">
+                        <strong className="text-red-500">
                             {cases >= 1000
                                 ? numeral(cases).format("0.0 a")
                                 : numeral(cases).format("0,0")}
