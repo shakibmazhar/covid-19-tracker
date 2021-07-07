@@ -86,7 +86,7 @@ const Linegraph = ({ casesType = "cases" }) => {
     }, [casesType]);
 
     return (
-        <div className="p-4 w-full h-96">
+        <div className="p-2 w-full h-96">
             {data?.length > 0 && (
                 <Line
                     data={{

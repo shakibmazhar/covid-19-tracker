@@ -2,12 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     @apply bg-gray-900;
 }
 
 .map {
-    @apply w-11/12 h-96 border-t-4 border-red-500 bg-gray-800 p-4 rounded-md m-5 lg:w-10/12;
+    @apply w-11/12 max-w-xl h-96 border-t-4 border-red-500 bg-gray-800 p-2 rounded-md mt-8 mb-8 ml-4 mr-4;
 }
 
 .map .leaflet-container {
@@ -16,7 +20,7 @@ body {
 }
 
 .table {
-    @apply flex flex-col w-11/12 h-96 bg-gray-700 overflow-scroll;
+    @apply flex flex-col w-11/12 h-72 bg-gray-700 overflow-scroll;
 }
 
 .table::-webkit-scrollbar {

@@ -59,29 +59,32 @@ export const Home = () => {
     // console.log(daily);
 
     return (
-        <div className="flex flex-col bg-gray-900 lg:flex-row justify-evenly items-center lg:items-start">
-            <div className="flex flex-col">
-                <div className="flex flex-col justify-evenly lg:flex-row">
+        <div className="w-full flex flex-col bg-gray-900 lg:flex-row justify-evenly items-center lg:items-start">
+            <div className="w-full flex flex-col">
+                <div className="flex flex-col items-center justify-evenly lg:flex-row lg:items-start">
                     {/* Global Updates Component */}
-                    <div>
+                    <div className="w-full lg:w-1/2 max-w-xl">
                         <Globalupdate setCasesType={setCasesType} />
                     </div>
                     {/* Country specific data Component */}
-                    <div>
+                    <div className="w-full lg:w-1/2 max-w-xl">
                         <Infobox />
                     </div>
                 </div>
-                <div className="flex justify-center">
+                <div className="flex flex-col items-center justify-evenly lg:flex-row">
                     {/* Map Component */}
                     <Map center={mapPosition} casesType={casesType} />
+                    <div className="flex flex-col w-11/12 p-2 max-w-xl bg-gray-800 mt-8 mb-8 ml-4 mr-4 rounded-md border-t-4 border-red-500 items-center">
+                        <h3 className="text-center text-lg p-2 mt-4 mb-4 font-bold text-white">
+                            Cases by Country
+                        </h3>
+                        <Table />
+                    </div>
                 </div>
             </div>
-            <div className="flex flex-col w-96 bg-gray-800 m-5 rounded-md border-t-4 border-red-500 items-center lg:w-4/12">
-                <h3 className="text-center text-lg p-2 font-bold text-white">
-                    Live Cases by Country
-                </h3>
-                <Table />
-                <h3 className="text-center text-lg p-2 font-bold text-white mt-2">
+            <div className="flex flex-col w-11/12 max-w-xl bg-gray-800 mt-8 mb-8 ml-4 mr-4 rounded-md border-t-4 border-red-500 items-center ">
+                {/* Graph */}
+                <h3 className="text-center text-lg p-2 mt-4 mb-4 font-bold text-white">
                     {capitalize(casesType)} History
                 </h3>
                 <Linegraph casesType={casesType} />
